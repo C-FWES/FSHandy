@@ -36,3 +36,7 @@ a {
     background-color: white;
     border: 0.1em black solid;
 }
+footer {
+    margin-top: 5%;
+    text-align: center;
+}
