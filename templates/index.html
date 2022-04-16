@@ -6,6 +6,27 @@
     <title>FS Handy</title>
 </head>
 <body>
-<h1>Flight Sim Handy</h1>
+<h1 class="text"><a href="https://github.com/C-FWES/FSHandy">Flight Sim Handy</a></h1>
+<h2 class="text">The current Zulu time is:</h2>
+<div id="clock_container">
+    <span id="utc_clock"></span>
+</div>
+<script>
+    (function () { //zulu time
+
+        var clockElement = document.getElementById("utc_clock");
+
+        function updateClock(clock) {
+            clock.innerHTML = new Date().toUTCString();
+        }
+
+        setInterval(function () {
+            updateClock(clockElement);
+        }, 1000);
+
+    }());
+</script>
+
+<div class="function_container" id="units">Unit Conversion</div>
 </body>
 </html>
