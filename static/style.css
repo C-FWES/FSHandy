@@ -31,3 +31,8 @@ a {
     color: white;
     border: 0.1em white solid;
 }
+.function_container:hover {
+    color: black;
+    background-color: white;
+    border: 0.1em black solid;
+}
