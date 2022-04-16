@@ -3,7 +3,7 @@
 <link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
 <head>
     <meta charset="UTF-8">
-    <title>FS Handy</title>
+    <title>Convert Units</title>
 </head>
 <body>
 <h1 class="text"><a href="https://github.com/C-FWES/FSHandy" target=”_blank”>Flight Sim Handy</a></h1>
@@ -27,11 +27,6 @@
     }());
 </script>
 
-<a href={{ url_for('convert') }}><div class="function_container" id="units">Unit Conversion</div></a>
-<a href={{ url_for('weather') }}><div class="function_container" id="units">Weather Information</div></a>
-<a href={{ url_for('perf') }}><div class="function_container" id="units">Takeoff/Approach Performance</div></a>
-<a href={{ url_for('freq') }}><div class="function_container" id="units">Radio Frequencies</div></a>
-<div class="function_container" id="units">Flight Suggestions</div>
 </body>
 <footer class="text">FSHandy by Wesley Ou</footer>
 </html>
