@@ -27,9 +27,11 @@
     }());
 </script>
 <div id="convert_container">
-    <label class="text">Pounds to Kilograms</label>
-    <input type="number" placeholder="Pounds" oninput="lbConverter(this.value)" onchange="lbConverter(this.value)">
+    <label class="text">Pounds to Kilograms</label><br>
+    <input type="number" placeholder="Pounds" oninput="lbConverter(this.value)" onchange="lbConverter(this.value)"><br>
+    <div class="result">
     <span id="outputKg"></span>
+    </div>
 </div>
 <script>
     function lbConverter(pounds) {

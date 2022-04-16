@@ -40,3 +40,19 @@ footer {
     margin-top: 5%;
     text-align: center;
 }
+#convert_container {
+    margin-top: 2%;
+    font-size: 1.5em;
+    text-align: center;
+}
+.result {
+    margin-top: 1%;
+}
+input {
+    margin-top: 1%;
+    font-size: 1em;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+    padding-left: 1%;
+}
