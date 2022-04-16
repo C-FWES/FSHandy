@@ -26,7 +26,16 @@
 
     }());
 </script>
-
+<div id="convert_container">
+    <label class="text">Pounds to Kilograms</label>
+    <input type="number" placeholder="Pounds" oninput="lbConverter(this.value)" onchange="lbConverter(this.value)">
+    <span id="outputKg"></span>
+</div>
+<script>
+    function lbConverter(pounds) {
+        document.getElementById("outputKg").innerHTML = pounds / 2.205
+    }
+</script>
 </body>
 <footer class="text">FSHandy by Wesley Ou</footer>
 </html>
