@@ -1,5 +1,7 @@
 import csv
 import random
+from math import floor
+
 import geopy.distance
 
 
@@ -25,8 +27,9 @@ def suggest_route():
             airfield_lat = float(reader[i][4])
             airfield_long = float(reader[i][5])
             distance = calculate_distance(starting_lat, starting_long, airfield_lat, airfield_long)
-            if distance >= 100 and distance <= 300:
-                suggestions.append([starting_icao, airfield_icao])
+            nm = round(float(str(distance).replace(" km", "")) / 1.852, 1)
+            if nm >= 100 and nm <= 300:
+                suggestions.append([starting_icao, airfield_icao, nm])
     return suggestions
 
 def format(suggestions_list: list):
@@ -34,5 +37,6 @@ def format(suggestions_list: list):
     for s in suggestions_list:
         start = s[0]
         end = s[1]
-        formatted.append(start + " -> " + end)
+        d = s[2]
+        formatted.append(start + " -> " + end + " " + str(d) + " nm")
     return formatted
