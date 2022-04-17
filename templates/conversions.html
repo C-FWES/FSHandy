@@ -30,9 +30,10 @@
 <div id="convert_container">
     <label class="text">Pounds to Kilograms</label><br>
     <input type="number" placeholder="Pounds" oninput="lbConverter(this.value)" onchange="lbConverter(this.value)" id="outputLb"><br>
-
     <input type="number" placeholder="Kg" oninput="kgConveter(this.value)" onchange="kgConverter(this.value)" id="outputKg"><br>
-
+    <label class="text">hPa to inHg</label><br>
+    <input type="number" placeholder="hPa" oninput="hPaConverter(this.value)" onchange="hPaConverter(this.value)" id="outputhPa"><br>
+    <input type="number" placeholder="inHg" oninput="inHgConveter(this.value)" onchange="inHgConverter(this.value)" id="outputinHg"><br>
 </div>
 <script>
     function lbConverter(pounds) {
@@ -40,6 +41,12 @@
     }
     function kgConverter(kilograms) {
         document.getElementById("outputLb").value = kilograms * 2.205
+    }
+    function hPaConverter(hPa) {
+        document.getElementById("outputinHg").value = hPa * 0.029529983071445
+    }
+    function inHgConverter(inHg) {
+        document.getElementById("outputhPa").value = inHg / 0.029529983071445
     }
 </script>
 </body>

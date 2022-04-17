@@ -59,3 +59,6 @@ input {
 .back_button {
     font-size: 1.2em;
 }
+#outputKg {
+    margin-bottom: 1%;
+}
