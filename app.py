@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from suggest import suggest_route, format
 
 app = Flask(__name__)
 
@@ -22,6 +23,12 @@ def perf():
 @app.route('/frequencies')
 def freq():
     return render_template('frequencies.html')
+
+@app.route('/suggestions', methods=['POST', 'GET'])
+def suggest():
+    suggested = suggest_route()
+    formatted = format(suggested)
+    return render_template('suggestions.html', suggestions=formatted)
 
 
 if __name__ == '__main__':

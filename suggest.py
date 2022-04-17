@@ -29,5 +29,10 @@ def suggest_route():
                 suggestions.append([starting_icao, airfield_icao])
     return suggestions
 
-test = suggest_route()
-print(test)
+def format(suggestions_list: list):
+    formatted = []
+    for s in suggestions_list:
+        start = s[0]
+        end = s[1]
+        formatted.append(start + " -> " + end)
+    return formatted

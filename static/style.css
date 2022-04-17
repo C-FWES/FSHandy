@@ -62,3 +62,9 @@ input {
 #outputKg {
     margin-bottom: 1%;
 }
+#suggest_container {
+    text-align: center;
+}
+p {
+    font-size: 1.5em;
+}
