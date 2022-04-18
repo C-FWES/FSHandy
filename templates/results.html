@@ -28,14 +28,9 @@
     }());
 </script>
 <div id="suggest_container">
-    <form action={{ url_for('handle') }} method="post">
-        <input type="number" name="start" placeholder="Starting range"><br>
-        <input type="number" name="end" placeholder="Ending range">
-        <input type="submit">
-    </form>
-{#    {% for s in suggestions  %}#}
-{#        <p class="text" class="routes"> {{ s }} </p>#}
-{#    {% endfor %}#}
+    {% for s in suggestions  %}
+        <p class="text" class="routes"> {{ s }} </p>
+    {% endfor %}
 </div>
 </body>
 <footer class="text">FSHandy by Wesley Ou</footer>

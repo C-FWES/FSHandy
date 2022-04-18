@@ -12,10 +12,10 @@ def calculate_distance(lat_a, long_a, lat_b, long_b):
     return km / 1.852  # to nm
 
 
-def suggest_route():
+def suggest_route(range_start, range_end):
     suggestions = []
     with open(
-            'static/us-airports.csv') as airports:  # Conditions that satisfy these flight suggestions: 100-250 nautical miles
+            'static/us-airports.csv') as airports:  # Conditions that satisfy these flight suggestions
         reader = list(csv.reader(airports))
         starting_airfield = random.choice(reader)
         starting_icao = starting_airfield[1]
@@ -28,7 +28,7 @@ def suggest_route():
             airfield_long = float(reader[i][5])
             distance = calculate_distance(starting_lat, starting_long, airfield_lat, airfield_long)
             nm = round(float(str(distance).replace(" km", "")) / 1.852, 1)
-            if nm >= 100 and nm <= 300:
+            if nm >= int(range_start) and nm <= int(range_end):
                 suggestions.append([starting_icao, airfield_icao, nm])
     return suggestions
 

@@ -26,9 +26,20 @@ def freq():
 
 @app.route('/suggestions', methods=['POST', 'GET'])
 def suggest():
-    suggested = suggest_route()
+
+    # range_start = request.form['start']
+    # range_end = request.form['end']
+    # suggested = suggest_route(range_start, range_end)
+    # formatted = format(suggested)
+    return render_template('suggestions.html')
+
+@app.route('/handle_suggestions', methods=['POST', 'GET'])
+def handle():
+    range_start = request.form['start']
+    range_end = request.form['end']
+    suggested = suggest_route(range_start, range_end)
     formatted = format(suggested)
-    return render_template('suggestions.html', suggestions=formatted)
+    return render_template('results.html', suggestions=formatted)
 
 
 if __name__ == '__main__':
