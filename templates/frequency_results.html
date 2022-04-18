@@ -28,10 +28,9 @@
     }());
 </script>
 <div id="radio_container">
-    <form method="post" action={{ url_for('handle_freqs') }}>
-        <input type="text" name="icao" placeholder="ICAO Code">
-        <input type="submit" class="submit">
-    </form>
+    {% for f in frequencies  %}
+        <p class="text" class=""> {{ f }} </p>
+    {% endfor %}
 </div>
 </body>
 <footer class="text">FSHandy by Wesley Ou</footer>

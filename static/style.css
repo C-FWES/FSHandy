@@ -78,3 +78,6 @@ p {
     border: 0.1em black solid;
     color: black;
 }
+#radio_container {
+    text-align: center;
+}
