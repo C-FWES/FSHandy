@@ -43,10 +43,10 @@
         document.getElementById("outputLb").value = kilograms * 2.205
     }
     function hPaConverter(hPa) {
-        document.getElementById("outputinHg").value = hPa * 0.029529983071445
+        document.getElementById("outputinHg").value = (hPa * 0.029529983071445).toFixed(2)
     }
     function inHgConverter(inHg) {
-        document.getElementById("outputhPa").value = inHg / 0.029529983071445
+        document.getElementById("outputhPa").value = (inHg / 0.029529983071445).toFixed(2)
     }
 </script>
 </body>
