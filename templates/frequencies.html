@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ILS Frequencies</title>
+    <a class="back_button" href={{ url_for('homepage') }}>Back</a>
 </head>
 <body>
 <h1 class="text"><a href="https://github.com/C-FWES/FSHandy" target=”_blank”>Flight Sim Handy</a></h1>
@@ -26,7 +27,11 @@
 
     }());
 </script>
-
+<div id="radio_container">
+    {% for f in frequencies  %}
+        <p class="text" class=""> {{ f }} </p>
+    {% endfor %}
+</div>
 </body>
 <footer class="text">FSHandy by Wesley Ou</footer>
 </html>

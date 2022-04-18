@@ -40,3 +40,5 @@ def format(suggestions_list: list):
         d = s[2]
         formatted.append(start + " -> " + end + " " + str(d) + " nm")
     return formatted
+
+test = suggest_route(100, 300)

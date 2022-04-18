@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Information</title>
+    <a class="back_button" href={{ url_for('homepage') }}>Back</a>
 </head>
 <body>
 <h1 class="text"><a href="https://github.com/C-FWES/FSHandy" target=”_blank”>Flight Sim Handy</a></h1>
@@ -26,7 +27,11 @@
 
     }());
 </script>
-
+<form action="" method="post">
+    <label class="text">Get METAR</label>
+    <input type="text" name="icao" placeholder="ICAO">
+    <input type=submit class="submit">
+</form>
 </body>
 <footer class="text">FSHandy by Wesley Ou</footer>
 </html>
