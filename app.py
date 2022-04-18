@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 
 import frequencies
 from suggest import suggest_route, format
-from frequencies import get_frequencies, format
+from frequencies import get_frequencies, format_freq
 
 app = Flask(__name__)
 
@@ -43,7 +43,7 @@ def handle():
 def handle_freqs():
     icao = request.form['icao']
     freqs = get_frequencies(icao)
-    formatted = frequencies.format(freqs)
+    formatted = format_freq(freqs)
     return render_template('frequency_results.html', frequencies=formatted)
 
 

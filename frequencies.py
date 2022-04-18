@@ -11,7 +11,7 @@ def get_frequencies(icao):
                 break
     return extracted_frequencies
 
-def format(freqs):
+def format_freq(freqs):
     formatted = []
     for f in freqs:
         result = f[0] + " " + f[1]
