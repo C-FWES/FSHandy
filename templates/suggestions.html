@@ -30,8 +30,8 @@
 <div id="suggest_container">
     <form action={{ url_for('handle') }} method="post">
         <input type="number" name="start" placeholder="Starting range"><br>
-        <input type="number" name="end" placeholder="Ending range">
-        <input type="submit">
+        <input type="number" name="end" placeholder="Ending range"><br>
+        <input type="submit" class="submit">
     </form>
 {#    {% for s in suggestions  %}#}
 {#        <p class="text" class="routes"> {{ s }} </p>#}

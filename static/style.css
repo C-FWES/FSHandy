@@ -68,3 +68,13 @@ input {
 p {
     font-size: 1.5em;
 }
+.submit {
+    background-color: black;
+    border: 0.1em white solid;
+    color: white;
+}
+.submit:hover {
+    background-color: white;
+    border: 0.1em black solid;
+    color: black;
+}
