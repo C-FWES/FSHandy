@@ -28,10 +28,7 @@
     }());
 </script>
 <div id="weather_container">
-    <form method="post" action={{ url_for('get_metar') }}>
-        <input type="text" name="icao" placeholder="ICAO Code">
-        <input type="submit" class="submit">
-    </form>
+    <p class="text"> {{ metar }}</p>
 </div>
 </body>
 <footer class="text">FSHandy by Wesley Ou</footer>
