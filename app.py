@@ -1,12 +1,10 @@
 from flask import Flask, render_template, request
 import requests
 import urllib.request, json
-
-from urllib3.util import url
-
 import frequencies
 from suggest import suggest_route, format
 from frequencies import get_frequencies, format_freq
+from weather import format_runways
 
 app = Flask(__name__)
 
@@ -27,11 +25,17 @@ def weather():
 def get_metar():
     icao = request.form.get('icao')
     metar = ""
+    runways = []
     url_str = 'https://avwx.rest/api/metar/' + icao + '?token=XbkdYIntZ6Xo9BUMA_x_vuaG8_zRZCWZVOEOFkCpl2Q'
+    urL_str_airfield = 'https://avwx.rest/api/station/' + icao + '?token=XbkdYIntZ6Xo9BUMA_x_vuaG8_zRZCWZVOEOFkCpl2Q'
     with urllib.request.urlopen(url_str) as info:
         data = json.loads(info.read().decode())
         metar = data['sanitized']
-    return render_template('weather_results.html', metar=metar)
+    with urllib.request.urlopen(urL_str_airfield) as station:
+        data1 = json.loads(station.read().decode())
+        runways = data1['runways']
+    formatted_runways = format_runways(runways)
+    return render_template('weather_results.html', metar=metar, runways=formatted_runways)
 
 @app.route('/perf')
 def perf():

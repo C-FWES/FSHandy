@@ -29,6 +29,11 @@
 </script>
 <div id="weather_container">
     <p class="text" id="metar"> {{ metar }}</p>
+    <div id="runways">
+        {% for r in runways %}
+            {{ r }} <br>
+        {% endfor %}
+    </div>
 </div>
 </body>
 <footer class="text">FSHandy by Wesley Ou</footer>
