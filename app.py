@@ -26,8 +26,6 @@ def weather():
 @app.route('/metar', methods=['GET', 'POST'])
 def get_metar():
     icao = request.form.get('icao')
-    # r = requests.get('https://avwx.rest/api/metar/' + icao + '?options=&airport=true&reporting=true&format=json&onfail=cache?token=XbkdYIntZ6Xo9BUMA_x_vuaG8_zRZCWZVOEOFkCpl2Q')
-    # json_data = xmltodict.parse(r.content)
     metar = ""
     url_str = 'https://avwx.rest/api/metar/' + icao + '?token=XbkdYIntZ6Xo9BUMA_x_vuaG8_zRZCWZVOEOFkCpl2Q'
     with urllib.request.urlopen(url_str) as info:
