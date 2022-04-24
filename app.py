@@ -4,7 +4,7 @@ import urllib.request, json
 import frequencies
 from suggest import suggest_route, format
 from frequencies import get_frequencies, format_freq
-from weather import format_runways
+from weather import format_runways, reccommend_runway
 
 app = Flask(__name__)
 
@@ -35,7 +35,9 @@ def get_metar():
         data1 = json.loads(station.read().decode())
         runways = data1['runways']
     formatted_runways = format_runways(runways)
-    return render_template('weather_results.html', metar=metar, runways=formatted_runways)
+    reccomended_runway = reccommend_runway(runways, metar)
+    format_reccomended = reccomended_runway[:2]
+    return render_template('weather_results.html', metar=metar, runways=formatted_runways, reccomended=format_reccomended)
 
 @app.route('/perf')
 def perf():
