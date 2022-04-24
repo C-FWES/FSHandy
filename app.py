@@ -37,6 +37,8 @@ def get_metar():
     formatted_runways = format_runways(runways)
     reccomended_runway = reccommend_runway(runways, metar)
     format_reccomended = reccomended_runway[:2]
+    if str(format_reccomended[1]) == '0':
+        format_reccomended = '0' + format_reccomended[0]
     return render_template('weather_results.html', metar=metar, runways=formatted_runways, reccomended=format_reccomended)
 
 @app.route('/perf')
