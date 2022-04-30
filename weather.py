@@ -14,7 +14,11 @@ def reccommend_runway(runways, metar): #21
     runway_numbers = []
     metar_sections = metar.split()
     wind = metar_sections[2]
-    wind_bearing = int(wind[:3])
+    wind_bearing = 0
+    if wind[:3] == 'VRB':
+        wind_bearing = 0
+    else:
+        wind_bearing = int(wind[:3])
     for r in runways:
         ident_1 = int(r['ident1'][:2] + "0")
         ident_2 = int(r['ident2'][:2] + "0")
