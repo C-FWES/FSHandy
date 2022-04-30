@@ -3,7 +3,7 @@
 <link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
 <head>
     <meta charset="UTF-8">
-    <title>Performance</title>
+    <title>Descent Performance</title>
     <a class="back_button" href={{ url_for('homepage') }}>Back</a>
 </head>
 <body>
@@ -28,12 +28,8 @@
     }());
 </script>
 <div id="calculator_container">
-    <form method="post" action={{ url_for('handle_perf') }}>
-    <input type="number" name="start_alt" placeholder="Beginning Altitude"> <br>
-    <input type="number" name="end_alt" placeholder="Target Altitude"> <br>
-    <input type="number" name="ias_start" placeholder="Beginning IAS"> <br>
-    <input type="submit" class="submit">
-    </form>
+    <p class="text" id="tod"> {{ tod }}</p>
+    <p class="text" id="fpm"> {{ fpm }}</p>
 </div>
 </body>
 <footer class="text">FSHandy by Wesley Ou</footer>
