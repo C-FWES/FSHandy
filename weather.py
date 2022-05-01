@@ -31,34 +31,3 @@ def reccommend_runway(runways, metar): #21
             difference = temp
             reccomendation = str(n)
     return reccomendation
-
-
-# test_runways =  [
-#     {
-#       "length_ft": 14572,
-#       "width_ft": 150,
-#       "ident1": "13R",
-#       "ident2": "31L"
-#     },
-#     {
-#       "length_ft": 11351,
-#       "width_ft": 150,
-#       "ident1": "04L",
-#       "ident2": "22R"
-#     },
-#     {
-#       "length_ft": 10000,
-#       "width_ft": 150,
-#       "ident1": "13L",
-#       "ident2": "31R"
-#     },
-#     {
-#       "length_ft": 8400,
-#       "width_ft": 200,
-#       "ident1": "04R",
-#       "ident2": "22L"
-#     }
-#   ]
-# test_metar = "KJFK 031551Z 35021G29KT 10SM -RA FEW024 BKN036 OVC046 10/07 A2966 RMK AO2 PK WND 36029/1550 RAB10 SLP042 P0000 T01000067"
-# test_reccomend = reccommend_runway(test_runways, test_metar)
-# print(test_reccomend)
