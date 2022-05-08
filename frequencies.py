@@ -1,6 +1,7 @@
 import csv
 
 def get_frequencies(icao):
+    icao = icao.upper()
     extracted_frequencies = []
     with open('static/airport-frequencies.csv', encoding="utf8") as frequencies:
         reader = list(csv.reader(frequencies))
