@@ -3,7 +3,7 @@ import urllib.request, json
 from suggest import suggest_route, format
 from frequencies import get_frequencies, format_freq
 from weather import format_runways, reccommend_runway
-from perf import calculate_tod, calculate_descent_rate
+# from perf import calculate_tod, calculate_descent_rate
 
 app = Flask(__name__)
 
@@ -44,14 +44,14 @@ def get_metar():
 def perf():
     return render_template('perf.html')
 
-@app.route('/handle_perf', methods=['POST', 'GET'])
-def handle_perf():
-    start_alt = int(request.form.get('start_alt'))
-    target_alt = int(request.form.get('end_alt'))
-    ias_start = int(request.form.get('ias_start'))
-    top_descent = calculate_tod(start_alt, target_alt)
-    fpm = calculate_descent_rate(ias_start)
-    return render_template('performance_results.html', tod=top_descent, fpm=fpm)
+# @app.route('/handle_perf', methods=['POST', 'GET'])
+# def handle_perf():
+#     start_alt = int(request.form.get('start_alt'))
+#     target_alt = int(request.form.get('end_alt'))
+#     ias_start = int(request.form.get('ias_start'))
+#     top_descent = calculate_tod(start_alt, target_alt)
+#     fpm = calculate_descent_rate(ias_start)
+#     return render_template('performance_results.html', tod=top_descent, fpm=fpm)
 
 @app.route('/frequencies')
 def freq():
